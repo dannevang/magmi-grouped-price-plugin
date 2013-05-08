@@ -36,7 +36,6 @@ class GrouppriceProcessor extends Magmi_ItemProcessor
             if (!empty($group_ids)) {
                 $sql = 'DELETE FROM ' . $table_name . '
                               WHERE entity_id=?
-                                AND customer_group_id IN (' . implode(', ', $group_ids) . ')
                                 AND website_id IN (' . implode(', ', $website_ids) . ')';
                 $this->delete($sql, array($params['product_id']));
             }
